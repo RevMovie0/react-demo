@@ -15,7 +15,10 @@ function App() {
       <h1>Temperature Converter</h1>
       <select
         value={conversionType}
-        onChange={(e) => setConversionType(e.target.value)}
+        onChange={(e) => {
+          setConversionType(e.target.value);
+          setIsClicked(false);
+        }}
       >
         <option value="celsius">C → F</option>
         <option value="fahrenheit">F → C</option>
@@ -41,11 +44,13 @@ function App() {
       >
         Convert
       </button>
-      {!isClicked ? null : conversionType === "celsius" ? (
-        <Fahrenheit temperature={outputValue} />
-      ) : (
-        <Celsius temperature={outputValue} />
-      )}
+      {isClicked ? (
+        conversionType === "celsius" ? (
+          <Fahrenheit temperature={outputValue} />
+        ) : (
+          <Celsius temperature={outputValue} />
+        )
+      ) : null}
     </>
   );
 }
