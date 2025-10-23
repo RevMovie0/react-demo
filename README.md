@@ -1,22 +1,23 @@
-<<<<<<< HEAD
-# React + Vite
+# Temp Converter
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A react app that converts temperature values from F <--> C
 
-Currently, two official plugins are available:
+### Here's what to do:
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- build a temperature converter between F and C
+  - C = (F-32)\*(5/9)
+  - F = C\*(9/5)+32
+- Start a new react app with the Vite react template
+- Add two components, the Fahrenheit component and the Celsius component, both children of the root component
+- Both components should have:
+  - an input field to enter temp
+  - the temp in that unit rendered on page
+  - a button to calculate the conversion
+- Users should be able to enter a temp in either F or C, click the button, and see the other component update with the newly calculated temp.
+- Use lifting state to lift the input to the shared parent component, convert the temperature, then send it down to the other child component to be displayed.
 
-## React Compiler
+### Stretch Goals:
 
-The React Compiler is enabled on this template. See [this documentation](https://react.dev/learn/react-compiler) for more information.
-
-Note: This will impact Vite dev & build performances.
-
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
-=======
-# react-demo
->>>>>>> 585e7bc1512b985fcf7c441da7bbbb34415a9179
+- Update the app so that just entering a temp causes the conversion to occur immedately, no button press necessary
+- Update the temperature displayed in the input boxes immediately so the two inputs are both always synced
+- Add a third component, one for temperatures in Kelvin
